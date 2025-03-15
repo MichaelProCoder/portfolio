@@ -1,0 +1,163 @@
+/* Reset default styles and set base font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body styles with overlay setup */
+body {
+    line-height: 2;               /* Improves text readability */
+    color: #ffffff;                    /* Default text color */
+    padding: 40px 20px;            /* Spacing around content */
+    min-height: 100vh;             /* Minimum full viewport height */
+    position: relative;            /* Required for pseudo-element positioning */
+    background: url(background.jpg) center center fixed;
+background-size: cover;
+}
+
+/* Semi-transparent overlay for better text readability */
+body::before {
+    content: '';
+    position: fixed;               /* Fixed position covers entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  /*  background: rgba(255, 255, 255, 0.9);  /* White overlay with 90% opacity */
+
+}
+
+/* Header section styling */
+header {
+    width: 100%;                  /* Full width of container */
+    text-align: center;           /* Centers text content */
+    margin-bottom: 30px;          /* Space below header */
+    padding: 30px;                /* Internal spacing */
+    background: rgba(255, 255, 255, 0.95);  /* Semi-transparent background */
+    border-radius: 50px;          /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);  /* Subtle shadow effect */
+    backdrop-filter: blur(50px);   /* Frosted glass effect */
+}
+
+h1 {
+    font-size: 50px;             /* Large title size */
+    color: #ffffff;                  /* Dark text color */
+    margin-bottom: 10px;          /* Space below title */
+}
+
+
+/* Main container for gallery content */
+.container {
+    max-width: 1200px;            /* Limits width on large screens */
+    margin: 0 auto;               /* Centers container horizontally */
+    display: flex;                /* Enables flexbox layout */
+    flex-wrap: wrap;          /* Allows items to wrap onto multiple lines */
+    gap: 50px;                    /* Space between grid items */
+    justify-content: space-between; /* Distributes space between items */
+}
+
+/* Individual gallery section styling */
+section {
+    flex: 1 1 calc(50% - 20px);   /* Flex grow/shrink and basis for two columns */
+    min-width: 300px;             /* Minimum width before wrapping */
+    margin-bottom: 20px;          /* Space below sections */
+    padding: 25px;                /* Internal spacing */
+    border-radius: 15px;          /* Rounded corners */
+  
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);  /* Initial shadow state */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transitions for hover effects */
+    backdrop-filter: blur(5px);   /* Frosted glass effect */
+}
+
+div:hover { 
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+/* Hover effect for sections */
+/* please add the effect here */
+      /* Slight upward movement */
+      /* Enhanced shadow on hover */
+
+
+/* Section heading styling */
+section h2 {
+    font-size: 1.5em;             /* Heading size */
+    color: #ffffff;                  /* Dark text color */
+    margin-bottom: 15px;          /* Space below heading */
+    border-bottom: 2px solid #eee; /* Subtle bottom border */
+    padding-bottom: 8px;          /* Space between text and border */
+}
+
+/* Image container styling */
+.image-container {
+    position: relative;           /* Required for overflow control */
+    overflow: hidden;             /* Clips image zoom effect */
+    border-radius: 10px;          /* Rounded corners for images */
+    margin-bottom: 15px;          /* Space below images */
+}
+
+/* Image styling */
+.image-container img {
+    width: 100%;                  /* Full width of container */
+    height: 250px;                /* Fixed height for consistency */
+    object-fit: cover;            /* Maintains aspect ratio while filling container */
+    transition: transform 0.3s ease;  /* Smooth zoom transition */
+}
+
+section {
+    transition: transform 0.3s ease;
+    }
+    section:hover {
+    transform: translateY(-5px);
+    }
+/* Image hover zoom effect */
+/* please add the effect here */
+
+
+.contact-icon {
+    width: 50px;  /* Adjust size as needed */
+    height: auto;  /* Maintain aspect ratio */
+    margin: 3px;  /* Add spacing between icons */
+}
+
+
+.contact-info {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+p {
+   line-height: 1.6;
+    color: #ffffff;                  /* Medium gray text */
+   
+}
+
+/* Footer styling */
+footer {
+    width: 100%;                  /* Full width of container */
+    text-align: center;           /* Centers text content */
+    margin-top: 30px;             /* Space above footer */
+    padding: 20px;                /* Internal spacing */
+    background: rgba(98, 98, 98, 0.95);  /* Semi-transparent background */
+    border-radius: 15px;          /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    backdrop-filter: blur(5px);   /* Frosted glass effect */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;        /* Reduced padding on mobile */
+    }
+
+    section {
+        flex: 1 1 100%;           /* Full width sections on mobile */
+    }
+
+    .image-container {
+        height: auto;             /* Flexible height for images on mobile */
+    }
+}

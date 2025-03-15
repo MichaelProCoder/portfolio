@@ -1,0 +1,219 @@
+/* Reset default margin, padding, and apply box-sizing to all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #eaeaea;
+}
+
+/* Main container for content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Styling for main title */
+.main-title {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 2rem 0;
+    font-size: 2.5rem;
+}
+
+/* Heading styles */
+
+h1 {
+    text-align: center;
+    background: #cacaca;
+    color: #000000;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+h2 {
+    text-align: center;
+    background: #cacaca;
+    color: #000000;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/* Description text styling */
+.section-description {
+    text-align: center;
+    color: #000000;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+/* Section background colors */
+
+.grid-section {
+    background-color: #000000;
+    padding: 3rem 0;
+}
+
+/* Grid layout styling */
+.grid {
+    display: grid;
+    /*grid-template-columns: repeat(3, 1fr);*/
+    gap: 1rem;
+}
+
+/* Grid item styling */
+/* TO DO */
+/* students need to add Grid item styling */
+.grid-item {
+    position: relative; /* Creates positioning context for overlay */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+/* Image styling inside grid items */
+.grid-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect on grid images */
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Overlay effect on hover */
+/* TO DO */
+/* students need to add the overlay effect */
+.grid-item-overlay {
+    position: absolute; /* Positions overlay relative to grid-item */
+    top: 0; /* Align to top edge of grid-item */
+    left: 0; /* Align to left edge of grid-item */
+    width: 100%; /* Stretch full width of grid-item */
+    height: 100%; /* Stretch full height of grid-item */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: rgb(255, 255, 255);
+    display: flex; /* Makes the overlay a flex container */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    padding: 1rem;
+    text-align: center; /* Centers the text within the flex item */
+    /* Understanding display: flex in the overlay:
+    * 1. Without flex, vertically centering text would require complex calcu
+    lations
+    * 2. Flexbox provides a simple way to center content both vertically and
+    horizontally
+    * 3. align-items: center handles vertical alignment
+    * 4. justify-content: center handles horizontal alignment
+    * 5. This creates perfect centering regardless of text length
+    */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+    }
+
+/* Show overlay on hover */
+.grid-item:hover .grid-item-overlay {
+    opacity: 1;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #cacaca;
+    color: rgb(0, 0, 0);
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Sticky Navigation Bar */
+.nav-bar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+    .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background: white;
+    width: 70%;
+    height: 100vh;
+    padding: 2rem;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    gap: 1rem;
+    }
+    .nav-links.active {
+    right: 0;
+    }
+    .mobile-menu-btn {
+    display: block;
+    }
+    }
